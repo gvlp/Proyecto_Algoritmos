@@ -1,6 +1,5 @@
-from swapi_api import Swapi
-from starship import Starship
-from vehicle import Vehicle
+from Swapi_api import Swapi
+
 
 class Person:
     def __init__(self, data, swapi_api):

@@ -1,6 +1,6 @@
 # MAIN
 
-from swapi_api import Swapi
+from Swapi_api import Swapi
 
 def main():
     swapi_api = Swapi()
@@ -11,7 +11,11 @@ def main():
         print("2. Información de personajes")
         print("3. Información de planetas")
         print("4. Información de seres vivos")
-        print("5. Salir del programa")
+        print("5. Personas por planeta")
+        print("6. Información de naves")
+        print("7. Estadistica sobre las naves")
+        print("8. Misiones")
+        print("9. Salir del programa")
 
         option = input("Opción: ")
 
@@ -85,10 +89,6 @@ def main():
                         break
                 except ValueError:
                     print("Ingrese un número válido.")
-
-        elif option == "5":
-            print("Ha salido del programa")
-            break
 
         else:
             print("Esta opción no es válida, por favor intente de nuevo.")
