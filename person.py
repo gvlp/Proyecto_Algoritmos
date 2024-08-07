@@ -53,15 +53,21 @@ class Person:
         self.vehicles_names = [vehicle['name'] for vehicle in vehicles_data]
 
     def __str__(self):
-        return f'''
-        --- Personaje ---
-        
-        Nombre: {self.name}
-        Nombre del Planeta de origen: {self.homeworld_name}
-        Títulos de los episodios en los que interviene: {self.films_names}
-        Género: {self.gender}
-        Especie: {self.species_name}
-        Nombre de las naves que utiliza: {self.starships_names if self.starships_names else 'Ninguna'}
-        Nombre de los vehículos que utiliza: {self.vehicles_names if self.vehicles_names else 'Ninguno'}
+        films_list = '\n'.join(f'    - {films_name}' for films_name in self.films_names) if self.films_names else '    - Ninguno'
+        starship_list = '\n'.join(f'    - {starships_names}' for starships_names in self.starships_names) if self.starships_names else '    - Ninguna'
+        vehicles_list = '\n'.join(f'    - {vehicles_names}' for vehicles_names in self.vehicles_names) if self.vehicles_names else '    - Ninguno'
 
+        return f'''
+---------- {self.name} ----------
+        
+* Nombre: {self.name}
+* Nombre del Planeta de origen: {self.homeworld_name}
+* Títulos de los episodios en los que interviene:
+{films_list}
+* Género: {self.gender}
+* Especie: {self.species_name}
+* Nombre de las naves que utiliza:
+{starship_list}
+* Nombre de los vehículos que utiliza:
+{vehicles_list}
 '''

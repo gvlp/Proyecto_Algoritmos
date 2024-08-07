@@ -16,16 +16,16 @@ class Movie:
 
         return f'''
 
---- {self.title} ---
+---------- {self.title} ----------
 
 * Título: {self.title}
 * Número de Episodio: {self.episode_id}
 * Fecha de Lanzamiento: {self.release_date}
-* Texto al inicio de la película (Opening Crawl): 
-{self.opening_crawl}
 * Nombre del Director: {self.director}
-        
-        '''
+* Texto al inicio de la película (Opening Crawl): 
+
+{self.opening_crawl}
+ '''
 
     def get_full_opening_crawl(self):
         return self.opening_crawl
