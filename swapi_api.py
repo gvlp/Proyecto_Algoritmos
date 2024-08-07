@@ -21,8 +21,14 @@ class Swapi:
         }
 
     def data(self, endpoint):
-        response = requests.get(self.endpoints[endpoint])
-        return response.json()["results"]
+        url = self.endpoints[endpoint]
+        results = []
+        while url:
+            response = requests.get(url)
+            data = response.json()
+            results.extend(data["results"])
+            url = data["next"]
+        return results
 
     def get_data(self, endpoint, id=None):
         if id:

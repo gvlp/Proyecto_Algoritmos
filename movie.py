@@ -1,3 +1,5 @@
+import textwrap
+
 class Movie:
 
     def __init__(self, movie_data):
@@ -8,14 +10,20 @@ class Movie:
         self.director = movie_data["director"]
 
     def __str__(self):
-        return f'''
-        --- Película ---
 
-        * Título: {self.title}
-        * Número de Episodio: {self.episode_id}
-        * Fecha de Lanzamiento: {self.release_date}
-        * Texto al inicio de la película (Opening Crawl): {self.opening_crawl[:100]}...
-        * Nombre del Director: {self.director}
+        opening_crawl = textwrap.dedent(self.opening_crawl).strip()
+        wrapped_crawl = textwrap.fill(opening_crawl, width=80)
+
+        return f'''
+
+--- {self.title} ---
+
+* Título: {self.title}
+* Número de Episodio: {self.episode_id}
+* Fecha de Lanzamiento: {self.release_date}
+* Texto al inicio de la película (Opening Crawl): 
+{self.opening_crawl}
+* Nombre del Director: {self.director}
         
         '''
 

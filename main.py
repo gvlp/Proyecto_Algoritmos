@@ -1,10 +1,42 @@
 # MAIN
 
-from Swapi_api import Swapi
+from swapi_api import Swapi 
+import time
 
 def main():
+
     swapi_api = Swapi()
 
+    print("Cargando data de Star Wars")
+    
+    startTime=time.time()
+    print("El programa se encuentra buscando los datos de las películas")
+    movies = swapi_api.get_data("films")
+    end_time = time.time()
+    duracion=end_time-startTime
+    print(f"Duración: {duracion:.2f} segundos")
+
+    print("El programa se encuentra buscando los datos de los personajes")
+    startTime=time.time()
+    people = swapi_api.get_data("people")
+    end_time = time.time()
+    duracion=end_time-startTime
+    print(f"Duración: {duracion:.2f} segundos")
+
+    print("El programa se encuentra buscando los datos de los planetas")
+    startTime=time.time()
+    planets = swapi_api.get_data("planets")
+    end_time = time.time()
+    duracion=end_time-startTime
+    print(f"Duración: {duracion:.2f} segundos")
+
+    print("El programa se encuentra buscando los datos de los seres vivos")
+    startTime=time.time() 
+    species = swapi_api.get_data("species")
+    end_time = time.time()
+    duracion=end_time-startTime
+    print(f"Duración: {duracion:.2f} segundos")
+   
     while True:
         print("Bienvenido al mundo de Star Wars, por favor seleccione una opción:")
         print("1. Información de películas")
@@ -20,8 +52,8 @@ def main():
         option = input("Opción: ")
 
         if option == "1":
-            movies = swapi_api.get_data("films")
             print("Lista de películas:")
+
             for i, movie in enumerate(movies, 1):
                 print(f"{i}. {movie.title}")
             while True:
@@ -38,23 +70,25 @@ def main():
                     print("Ingrese un número, por favor.")
 
         elif option == "2":
-            people = swapi_api.get_data("people")
             print("Lista de personajes:")
-            for i, person in enumerate(people, start=1):
+            
+            for i, person in enumerate(people, 1):
                 print(f"{i}. {person.name}")
-            seleccion = input("Ingrese el número del personaje que desea ver: ")
-            try:
-                seleccion = int(seleccion)
-                if seleccion > 0 and seleccion <= len(people):
-                    print(people[seleccion - 1])
-                    break
-                else:
-                    print("Número inválido. Por favor, ingrese un número válido.")
-            except ValueError:
-                print("Ingrese un número, por favor.")
+
+            while True:
+                seleccion = int(input("Ingrese el número del personaje que desea ver: "))
+                try:
+                    seleccion = int(seleccion)
+                    if seleccion > 0 and seleccion <= len(people):
+                        print(people[seleccion - 1])
+                        break
+                    else:
+                        print("Número inválido. Por favor, ingrese un número válido.")
+                except ValueError:
+                    print("Ingrese un número, por favor.")
 
         elif option == "3":
-            planets = swapi_api.get_data("planets")
+        #    planets = swapi_api.get_data("planets")
             print("Lista de planetas:")
             for i, planet in enumerate(planets, 1):
                 print(f"{i}. {planet.name}")
@@ -72,10 +106,9 @@ def main():
                     print("Ingrese un número, por favor.")
 
         elif option == "4":
-            species = swapi_api.get_data("species")
             print("Lista de especies:")
             for i, specie in enumerate(species):
-                print(f"{i+1}. {specie.name}")  # Access the name attribute directly
+                print(f"{i+1}. {specie.name}")  
 
             while True:
                 try:
@@ -85,10 +118,14 @@ def main():
                     else:
                         selected_specie = species[specie_index - 1]
                         print("\nInformación de la especie:")
-                        print(selected_specie)  # Print the Species object directly
+                        print(selected_specie)  
                         break
                 except ValueError:
                     print("Ingrese un número válido.")
+
+        elif option == "9":
+            print("Ha salido del programa")
+            break
 
         else:
             print("Esta opción no es válida, por favor intente de nuevo.")

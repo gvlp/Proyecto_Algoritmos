@@ -1,2 +1,2 @@
 # Proyecto_Algoritmos
-Realizado por: Victoria Hamana, Gabriela Lara &amp; María Quintero
+Realizado por: Victoria Hamana, Gabriela Lara & María Quintero
