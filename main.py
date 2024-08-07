@@ -1,6 +1,6 @@
 # MAIN
 
-from swapi_api import Swapi 
+from Clases.swapi_api import Swapi 
 import time
 
 def main():
@@ -76,25 +76,62 @@ def main():
                     print("Ingrese un número, por favor.")
 
         elif option == "2":
-            print("Lista de personajes:")
-            
-            for i, person in enumerate(people, 1):
-                print(f"{i}. {person.name}")
+            print("Opciones para buscar personajes:")
+            print("1. Buscar personajes manualmente")
+            print("2. Ver lista de personajes")
 
-            while True:
-                seleccion = int(input("Seleccione un personaje (ingrese el número) para ver información sobre él: "))
-                try:
-                    seleccion = int(seleccion)
-                    if seleccion > 0 and seleccion <= len(people):
-                        print(people[seleccion - 1])
-                        break
-                    else:
-                        print("Número inválido. Por favor, ingrese un número válido.")
-                except ValueError:
-                    print("Ingrese un número, por favor.")
+            person_option = input("Por favor ingrese una opción: ")
+
+            if person_option == "1":
+                print("Búsqueda de personajes:")
+                search_string = input("Ingrese una cadena de caracteres para buscar a los personajes que la contengan: ")
+                search_string = search_string.lower()
+
+                matching_characters = [person for person in people if search_string in person.name.lower()]
+
+                if matching_characters:
+                    print("Personajes encontrados:")
+                    for i, person in enumerate(matching_characters, 1):
+                        print(f"{i}. {person.name}")
+
+                    while True:
+                        seleccion = input("Seleccione un personaje (ingrese el número) para ver información sobre él: ")
+                        try:
+                            seleccion = int(seleccion)
+                            if seleccion > 0 and seleccion <= len(matching_characters):
+                                selected_person = matching_characters[seleccion - 1]
+                                print(selected_person)
+                                break
+                            else:
+                                print("Número inválido. Por favor, ingrese un número válido.")
+                        except ValueError:
+                            print("Ingrese un número, por favor.")
+
+                else:
+                    print("No se encontraron personajes que coincidan con la búsqueda.")
+
+            elif person_option == "2":
+                print("Lista de personajes:")
+                for i, person in enumerate(people, 1):
+                    print(f"{i}. {person.name}")
+
+                while True:
+                    seleccion = input("Seleccione un personaje (ingrese el número) para ver información sobre él: ")
+                    try:
+                        seleccion = int(seleccion)
+                        if seleccion > 0 and seleccion <= len(people):
+                            selected_person = people[seleccion - 1]
+                            print(selected_person)
+                            break
+                        else:
+                            print("Número inválido. Por favor, ingrese un número válido.")
+                    except ValueError:
+                        print("Ingrese un número, por favor.")
+            else:
+                print("Opción inválida. Por favor, intente de nuevo.")
 
         elif option == "3":
-        #    planets = swapi_api.get_data("planets")
+
             print("Lista de planetas:")
             for i, planet in enumerate(planets, 1):
                 print(f"{i}. {planet.name}")
