@@ -1,4 +1,4 @@
-from swapi_api import Swapi
+from Clases.swapi_api import Swapi
 
 class Person:
     def __init__(self, data, swapi_api):
