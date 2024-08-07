@@ -34,16 +34,16 @@ class Species:
                 self.episodes_names.append(response.json()['title'])
 
     def __str__(self):
-        characters_list = '\n'.join(f'- {character_name}' for character_name in self.characters_names)
-        episodes_list = '\n'.join(f'- {episode_name}' for episode_name in self.episodes_names)
+        characters_list = '\n'.join(f'    - {character_name}' for character_name in self.characters_names)
+        episodes_list = '\n'.join(f'    - {episode_name}' for episode_name in self.episodes_names)
 
         return f'''
-        --- Especie ---
+---------- {self.name} ----------
         
-        Nombre: {self.name}
-        Planeta de origen: {self.homeworld_name}
-        Personajes:
-        {characters_list}
-        Episodios:
-        {episodes_list}
-        '''
+* Nombre: {self.name}
+* Planeta de origen: {self.homeworld_name}
+* Personajes:
+{characters_list}
+* Episodios:
+{episodes_list}
+'''

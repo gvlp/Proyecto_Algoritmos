@@ -33,15 +33,19 @@ class Planet:
         return residents_names
 
     def __str__(self):
-        return f'''
-        --- Planeta ---
-        
-        * Nombre: {self.name}
-        * Periodo orbital: {self.orbital_period}
-        * Periodo de rotación: {self.rotation_period}
-        * Población: {self.population}
-        * Clima: {self.climate}
-        * Películas en las que aparece: {self.films_names}
-        * Residentes: {self.residents_names}
+        films_list = '\n'.join(f'    - {films_name}' for films_name in self.films_names) if self.films_names else '    - Ninguno'
+        resident_list = '\n'.join(f'    - {residents_names}' for residents_names in self.residents_names) if self.residents_names else '    - Ninguno'
 
+        return f'''
+---------- {self.name} ----------
+        
+* Nombre: {self.name}
+* Período orbital: {"Desconocido" if self.orbital_period == "unknown" else self.orbital_period}
+* Período de rotación: {"Desconocido" if self.rotation_period == "unknown" else self.rotation_period}
+* Población: {"Desconocida" if self.population == "unknown" else self.population}
+* Clima: {"Desconocido" if self.climate == "unknown" else self.climate}
+* Películas en las que aparece: 
+{films_list}
+* Residentes: 
+{resident_list}
         '''
