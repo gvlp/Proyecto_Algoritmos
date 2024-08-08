@@ -1,7 +1,7 @@
 import pandas as pd
 import glob
 import os
-import json
+
 
 
 def cargar_datos_csv() :

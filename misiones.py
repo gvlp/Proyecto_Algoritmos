@@ -1,148 +1,168 @@
 from leer_csv import cargar_datos_csv
+from mision import Mision
 
-class Mision :
-     
-    planets=[]
-    starships=[]
-    weapons=[]
-    members=[]
+class Misiones:
 
-    def __init__(self, name, selected_planet, selected_starship, selected_weapons, selected_characters) -> None:
-        self.name=name
-        self.selected_planet=selected_planet
-        self.selected_starship=selected_starship
-        self.selected_weapons=selected_weapons
-        self.selected_chacarter=selected_characters
+    def __init__(self, misiones=[]) :
+        self.misiones=misiones
 
-    def listar_planetas(self) :
-        for planeta in cargar_datos_csv()['planets'] :
-            self.planets.append(planeta['name'])
-
-    def listar_naves(self) :
-        for starship in cargar_datos_csv()['starships'] :
-            self.starships.append(starship['name'])
-
-    def listar_armas(self) :
-        for arma in cargar_datos_csv()['weapons'] :
-            self.weapons.append(arma['name'])
-
-    def listar_integrantes(self) :
-        for integrante in cargar_datos_csv()['characters'] :
-            self.members.append(integrante['name'])
-
-    def crear_mision(self) :
-
-        #Nombre de la misión
-        ingreso_nombre=input('Nombre de la mision')
-        print('-'*20)
-
-        #Elección del planeta
-        print()
-        print('Elige el planeta donde quieres que se desarrolle la misón: ')
-        self.listar_planetas()
-        for i in range(len(self.planets)) : 
-            print(f'{i+1}. {self.planets[i]}')
-        ingreso_planeta=input('>>> ').strip()
-        while not ingreso_planeta.isnumeric() or int(ingreso_planeta)<1 or int(ingreso_planeta)>len(self.planets) :
-            print('\nIngreso Inválido')
-            print()
-            print('Elige el planeta donde quieres que se desarrolle la misón: ')
-            for i in range(len(self.planets)) : 
-                print(f'{i+1}. {self.planets[i]}')
-            ingreso_planeta=input('>>> ').strip()
-        planeta_seleccionado=self.planets[ingreso_planeta-1]
-        print('-'*20)
-
-        #Elección de la nave
-        print()
-        print('Elige la nave que usarás en la misón: ')
-        self.listar_naves()
-        for i in range(len(self.starships)) : 
-            print(f'{i+1}. {self.starships[i]}')
-        ingreso_nave=input('>>> ').strip()
-        while not ingreso_nave.isnumeric() or int(ingreso_nave)<1 or int(ingreso_nave)>len(self.starships) :
-            print('\nIngreso Inválido')
-            print()
-            print('Elige la nave que usarás en la misón: ')
-            for i in range(len(self.starships)) : 
-                print(f'{i+1}. {self.starships[i]}')
-            ingreso_nave=input('>>> ').strip()
-        nave_seleccionada=self.starships[ingreso_nave-1]
-        print('-'*20)
-
-        #Eleccion de Armas: 
-        print()
-        self.listar_armas()
-        print('Elige las armas que usarás en la misón ')
-        print('En total, elegiras 7 armas ')
-        for j in range(8) :
-            armas_seleccionadas=[]
-            print('Elige una: ')
-            for i in range(len(self.weapons)) : 
-                print(f'{i+1}. {self.weapons[i]}')
-            ingreso_arma=input('>>> ').strip()
-            while not ingreso_arma.isnumeric() or int(ingreso_arma)<1 or int(ingreso_arma)>len(self.weapons) :
-                print('\nIngreso Inválido')
-                print()
-                print('Elige otra: ')
-                for i in range(len(self.weapons)) : 
-                    print(f'{i+1}. {self.weapons[i]}')
-                ingreso_nave=input('>>> ').strip()
-            arma_seleccionada=self.weapons[ingreso_arma-1]
-            armas_seleccionadas.append(arma_seleccionada)
-            self.weapons.pop(ingreso_arma-1)
-        print('-'*20)
-
-        #Eleccion de Integrantes: 
-        print()
-        self.listar_integrantes()
-        print('Elige los integrantes que te acompañaran en la misón')
-        print('En total, elegiras a 7')
-        for j in range(8) :
-            integrantes_seleccionados=[]
-            print('Elige a uno: ')
-            for i in range(len(self.members)) : 
-                print(f'{i+1}. {self.members[i]}')
-            ingreso_integrante=input('>>> ').strip()
-            while not ingreso_integrante.isnumeric() or int(ingreso_integrante)<1 or int(ingreso_integrante)>len(self.members) :
-                print('\nIngreso Inválido')
-                print()
-                print('Elige a otro: ')
-                for i in range(len(self.members)) : 
-                    print(f'{i+1}. {self.members[i]}')
-                ingreso_integrante=input('>>> ').strip()
-            integrante_seleccionado=self.members[ingreso_integrante-1]
-            integrantes_seleccionados.append(integrante_seleccionado)
-            self.members.pop(integrante_seleccionado-1)
-        print('-'*20)
-
-        return Mision(ingreso_nombre, planeta_seleccionado, nave_seleccionada, armas_seleccionadas, integrantes_seleccionados)
-
-    print('Su misión ha sido creada exitosamente')
 
     def agregar_mision(self) :
-        lista_misiones=[] 
-        if len(lista_misiones)<5 :
-            self.crear_mision()
+        if len(self.misiones)<5 :
+            self.misiones.append(Mision().crear_mision())
         else :
             print('Lo sentimos, ya no podemos agregar otra misón')
 
 
+    def modoficar_mision(self) :
+        if self.misiones==[] :
+            print('No hay misiones proximamente...')
+        else :
+            for i, mision in self.misiones :
+                print(f'{i+1}. ')
+                mision.imprimir_mision()
+                print()
+            opcion=input('Ingrese el número de la misión que desea modificar: ').strip()
+            while not opcion.isnumeric() or int(opcion)<1 or int(opcion)>len(self.misiones) :
+                print('\nIngreso Inválido')
+                opcion=input('Ingrese el número de la misión que desea modificar: ').strip()
+            opcion=int(opcion)
+            mision_seleccionada=self.misiones[opcion-1]
+            opcion=input('''
+¿Qué aspecto de la misón desea modificar?
+1. Nombre de la misión
+2. Planeta donde se llevará acabo la misión
+3. Nave Espacial
+4. Armas
+5. Integrantes de la misión
+>>> ''').strip
+            while not opcion.isnumeric() or int(opcion)<1 or int(opcion)>5 :
+                print('\nIngreso Inválido')
+                opcion=input('''
+¿Qué aspecto de la misón desea modificar?
+1. Nombre de la misión
+2. Planeta donde se llevará acabo la misión
+3. Nave Espacial
+4. Armas
+5. Integrantes de la misión
+>>> ''').strip
+            if opcion=='1' :
+                mision_seleccionada.cambiar_nombre()
+
+            elif opcion=='2' :
+                mision_seleccionada.cambiar_planeta()
+
+            elif opcion=='3' :
+                mision_seleccionada.cambiar_nave()
+
+            elif opcion=='4' :
+                ingreso=input('''
+Intercambiar arma (1)
+Eliminar arma (2)
+Agregar Arma (3)
+>>> ''')
+                while not ingreso.isnumeric() or int(ingreso)<1 or int(ingreso)>3 :
+                    print('\nIngreso Inválido')
+                    ingreso=input('''
+Intercambiar arma (1)
+Eliminar arma (2)
+Agregar arma (3)
+>>> ''')
+                if ingreso=='1' :
+                    mision_seleccionada.cambiar_arma()
+                elif ingreso=='2' :
+                    mision_seleccionada.eliminar_arma()
+                elif ingreso=='3' :
+                    mision_seleccionada.agregar_arma()
+
+            elif opcion=='5' :
+                ingreso=input('''
+Intercambiar integrante (1)
+Eliminar integrante (2)
+Agregar integrante (3)
+>>> ''')
+                while not ingreso.isnumeric() or int(ingreso)<1 or int(ingreso)>3 :
+                    print('\nIngreso Inválido')
+                    ingreso=input('''
+Intercambiar integrante (1)
+Eliminar integrante (2)
+Agregar integrante (3)
+>>> ''')
+                if ingreso=='1' :
+                    mision_seleccionada.cambiar_integrante()
+                elif ingreso=='2' :
+                    mision_seleccionada.eliminar_integrante()
+                elif ingreso=='3' :
+                    mision_seleccionada.agregar_integrante()
+
+            else: 
+                print('Ingreso Inválido')
 
 
+    def visualizar_misiones(self) :
+        if self.misiones==[] :
+            print('No hay misiones disponibles')
+        else:
+            for i, mision in self.misiones :
+                print(f'{i+1}. ')
+                mision.imprimir_mision()
+                print()
+            opcion=input('Ingrese el número de la misión que desea modificar: ').strip()
+            while not opcion.isnumeric() or int(opcion)<1 or int(opcion)>len(self.misiones) :
+                print('\nIngreso Inválido')
+                opcion=input('Ingrese el número de la misión que desea modificar: ').strip()
+            opcion=int(opcion)
+            mision_seleccionada=self.misiones[opcion-1]
+            opcion=input('''
+    ¿Qué aspecto de la misón desea profundizar?
+    1. Datos de la nave espacial
+    2. Datos de las armas
+    3. Datos de los integrantes
+    >>> ''').strip
+            while not opcion.isnumeric() or int(opcion)<1 or int(opcion)>3 :
+                print('\nIngreso Inválido')
+                opcion=input('''
+    ¿Qué aspecto de la misón desea profundizar?
+    1. Datos de la nave espacial
+    2. Datos de las armas
+    3. Datos de los integrantes
+    >>> ''').strip
+                if opcion=='1' :
+                    nave_seleccionada=mision_seleccionada.selected_starship()
+                    for nave in cargar_datos_csv()['starships'] :
+                        if nave['name']==nave_seleccionada :
+                            print(f'{nave}: {nave['model']}')
+                            print(f'{nave}: {nave['manufacturer']}')
+                            print(f'{nave}: {nave['max_atmosphering_speed']}')
+                            print(f'{nave}: {nave['length']}')
+                            print(f'{nave}: {nave['crew']}')
+                            print(f'{nave}: {nave['passengers']}')
+                            print(f'{nave}: {nave['cargo_capacity']}')
+                            print(f'{nave}: {nave['consumables']}')
+                            print(f'{nave}: {nave['hyperdrive_rating']}')
+                            print(f'{nave}: {nave['MGLT']}')
+                            print(f'{nave}: {nave['starship_class']}')
 
-        
-
-
-
-
-
-
-
-
-    
-
-
-
-
+                elif opcion=='2' :
+                    armas_seleccionadas=mision_seleccionada.selected_weapons()
+                    for arma_selec in armas_seleccionadas :
+                        for arma in cargar_datos_csv()['weapons'] :
+                            if arma['name']==arma_selec:
+                                print(f'{arma}: {arma['model']}')
+                                print(f'{arma}: {arma['manufacturer']}')
+                                print(f'{arma}: {arma['length']}')
+                                print(f'{arma}: {arma['type']}')
+                                print(f'{arma}: {arma['description']}')
+                    
+                elif opcion=='3' :
+                    integrantes_seleccionados=mision_seleccionada.selected_chacarter()
+                    for integrante_selec in integrantes_seleccionados :
+                        for integrante in cargar_datos_csv()['characters'] :
+                            if integrante['name']==integrante_selec:
+                                print(f'{integrante}: {integrante['species']}')
+                                print(f'{integrante}: {integrante['gender']}')
+                                print(f'{integrante}: {integrante['height']}')
+                                print(f'{integrante}: {integrante['weight']}')
+                                print(f'{integrante}: {integrante['homeworld']}')
+                                print(f'{integrante}: {integrante['description']}')
 
