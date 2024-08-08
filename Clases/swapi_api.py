@@ -38,7 +38,7 @@ class Swapi:
         else:
             data = self.data(endpoint)
             module_name, class_name = self.factories[endpoint].rsplit('.', 1)
-            module = __import__('clases.' + module_name, fromlist=[class_name])
+            module = __import__('Clases.' + module_name, fromlist=[class_name])
             factory = getattr(module, class_name)
             if endpoint == "people":
                 return [factory(item, self) for item in data]
