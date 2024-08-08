@@ -7,12 +7,8 @@ def main():
 
     swapi_api = Swapi()
 
-    print()
-    print("¡BIENVENIDO AL MUNDO DE STAR WARS!")
-    print()
-    print("En breve podrás acceder a la base de datos más completa de la galaxia")
-    print()
-
+    print("\n¡BIENVENIDO AL MUNDO DE STAR WARS!\n\nEn breve podrás acceder a la base de datos más completa de la galaxia\n")
+    
     startTime=time.time()
     print("El programa se encuentra buscando los datos de las películas")
     movies = swapi_api.get_data("films")
@@ -43,18 +39,8 @@ def main():
    
     while True:
         print()
-        print("A continuación se presenta el menú, por favor seleccione una opción:")
-        print("1. Información de películas")
-        print("2. Información de personajes")
-        print("3. Información de planetas")
-        print("4. Información de seres vivos")
-        print("5. Personas por planeta")
-        print("6. Información de naves")
-        print("7. Estadistica sobre las naves")
-        print("8. Misiones")
-        print("9. Salir del programa")
-        print()
-
+        print("A continuación se presenta el menú, por favor seleccione una opción:\n1. Información de películas\n2. Información de personajes\n3. Información de planetas\n4. Información de seres vivos\n5. Personas por planeta\n6. Información de naves\n7. Estadistica sobre las naves\n8. Misiones\n9. Salir del programa\n")
+        
         option = input("Opción: ")
         print()
 
@@ -166,10 +152,7 @@ def main():
                     print("Ingrese un número, por favor.")
 
         elif option == "9":
-            print("El programa ha cerrado")
-            print()
-            print("¡QUE LA FUERZA TE ACOMPAÑE!")
-            print()
+            print("El programa ha cerrado\n\n¡QUE LA FUERZA TE ACOMPAÑE!\n")
             break
 
         else:
