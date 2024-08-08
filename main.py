@@ -2,7 +2,7 @@
 
 from Clases.swapi_api import Swapi
 import time
-from Menus.menu_swapi import menu
+from menus.menu_swapi import menu
 
 def main():
     swapi_api = Swapi()
