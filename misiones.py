@@ -124,6 +124,8 @@ class Mision :
         lista_misiones=[] 
         if len(lista_misiones)<5 :
             self.crear_mision()
+        else :
+            print('Lo sentimos, ya no podemos agregar otra misón')
 
 
 
