@@ -43,7 +43,7 @@ def main():
     species = swapi_api.get_data("species")
     end_time = time.time()
     duracion=end_time-startTime
-    print(f"Duración: {duracion:.2f} segundos")
+    print(f"Duración: {duracion:.2f} segundos") 
 
     menu(movies, people, planets, species)
 
