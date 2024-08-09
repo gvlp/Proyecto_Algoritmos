@@ -12,7 +12,7 @@ A continuación se presentan las posibles opciónes para que comiences tu misón
 4. Guardar misiones
 5. Cargar misiones
 6. Regresar al menú principal
->>> ''')
+>>> ''').strip()
         if opcion=='1' :
            viaje_galaxia.agregar_mision()
         elif opcion=='2' :
@@ -27,6 +27,6 @@ A continuación se presentan las posibles opciónes para que comiences tu misón
             print('Regresando al menú principal...')
             break
         else :
-            print('Ingreso inválido')
+            print('\nIngreso inválido')
 
 menu_misiones() 
