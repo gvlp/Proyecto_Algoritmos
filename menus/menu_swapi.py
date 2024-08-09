@@ -6,9 +6,8 @@ def menu(movies, people, planets, species):
         print("2. Información de personajes")
         print("3. Información de planetas")
         print("4. Información de seres vivos")
-        print("5. Personas por planeta")
-        print("6. Información de naves")
-        print("7. Estadistica sobre las naves")
+        print("5. Gráficas sobre personajes, planetas y naves")
+        print("7. Estadísticas sobre las naves")
         print("8. Misiones")
         print("9. Salir del programa")
         print()
@@ -122,6 +121,12 @@ def menu(movies, people, planets, species):
                         break
                 except ValueError:
                     print("Ingrese un número, por favor.")
+
+
+        elif option =="5":
+            from menu_graficas import mostrar_menu_graficas
+            mostrar_menu_graficas()
+             
 
         elif option == "9":
             print("El programa ha cerrado")
