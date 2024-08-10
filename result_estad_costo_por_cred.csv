@@ -1,0 +1,26 @@
+starship_class,mean,mode,max,min
+Airspeeder,,,,
+Assault ship,,,,
+Assault starfighter,177500.0,220000.0,220000.0,135000.0
+Attack shuttle,,,,
+Auxiliary starfighter,,,,
+Battleship,,,,
+Bomber,,,,
+Capital ship,150000000.0,150000000.0,150000000.0,150000000.0
+Corvette,3500000.0,3500000.0,3500000.0,3500000.0
+Dreadnought,,,,
+Gunship,,,,
+Haulcraft,,,,
+Heavy cruiser,,,,
+Interceptor,175000.0,175000.0,175000.0,175000.0
+Landspeeder,,,,
+Light freighter,100000.0,100000.0,100000.0,100000.0
+Medium transport,3000000.0,3000000.0,3000000.0,3000000.0
+Patrol craft,,,,
+Shuttle,,,,
+Sloop,,,,
+Speeder,,,,
+Star Dreadnought,1143350000.0,1143350000.0,1143350000.0,1143350000.0
+Starfighter,112499.5,,149999.0,75000.0
+Transport,,,,
+Yacht,,,,

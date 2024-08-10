@@ -7,9 +7,9 @@ def menu(movies, people, planets, species):
         print("3. Información de planetas")
         print("4. Información de seres vivos")
         print("5. Gráficas sobre personajes, planetas y naves")
-        print("7. Estadísticas sobre las naves")
-        print("8. Misiones")
-        print("9. Salir del programa")
+        print("6. Estadísticas sobre las naves")
+        print("7. Misiones")
+        print("8. Salir del programa")
         print()
 
         option = input("Opción: ")
@@ -126,9 +126,13 @@ def menu(movies, people, planets, species):
         elif option =="5":
             from menu_graficas import mostrar_menu_graficas
             mostrar_menu_graficas()
+
+        elif option =="6":
+            from menu_estadisticas import mostrar_menu_estadisticas
+            mostrar_menu_estadisticas()
              
 
-        elif option == "9":
+        elif option == "8":
             print("El programa ha cerrado")
             print()
             print("¡QUE LA FUERZA TE ACOMPAÑE!")

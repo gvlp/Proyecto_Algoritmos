@@ -29,7 +29,7 @@ def mostrar_menu_graficas():
 
 
 def mostrar_menu_naves():
-    print("Selecciona una opción:")
+    print("\nSelecciona una opción:")
     print("1. Longitud de la nave")
     print("2. Capacidad de carga")
     print("3. Clasificación de hiperimpulsor")
@@ -37,7 +37,7 @@ def mostrar_menu_naves():
     print("5. Regresar al menu principal")
 
     while True:
-        opcion_naves = input("Selecciona una opción: ")
+        opcion_naves = input("\nSelecciona una opción: ")
         if opcion_naves =="1":
             mostrar_grafica_naves_longitud()
         elif opcion_naves =="2":
