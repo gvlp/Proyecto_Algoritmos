@@ -8,10 +8,10 @@ from Graficas.grafica_naves_mglt import mostrar_grafica_naves_MGLT
 
 
 def mostrar_menu_graficas():
-    print("1. Ver gráfica de personas")
-    print("2. Ver gráfica de naves")
-    print("3. Regresar al menu principal")
     while True:
+        print("1. Ver gráfica de número personajes por planeta")
+        print("2. Ver gráfica de naves")
+        print("3. Regresar al menú principal\n")
 
         opcion = input("Selecciona una opción: ")
         if opcion == '1':
@@ -24,20 +24,21 @@ def mostrar_menu_graficas():
             break
             
         else:
-            print("Opción inválida. Inténtalo de nuevo.")
+            print("\nOpción inválida. Inténtalo de nuevo.")
             opcion = input("Selecciona una opción: ")
 
 
 def mostrar_menu_naves():
-    print("\nSelecciona una opción:")
-    print("1. Longitud de la nave")
-    print("2. Capacidad de carga")
-    print("3. Clasificación de hiperimpulsor")
-    print("4. MGLT (Modern Galactic Light Time)")
-    print("5. Regresar al menu principal")
-
     while True:
-        opcion_naves = input("\nSelecciona una opción: ")
+        print("\nSelecciona una opción:")
+        print("1. Longitud de la nave")
+        print("2. Capacidad de carga")
+        print("3. Clasificación de hiperimpulsor")
+        print("4. MGLT (Modern Galactic Light Time)")
+        print("5. Regresar al menú principal\n")
+
+    
+        opcion_naves = input("Selecciona una opción: ")
         if opcion_naves =="1":
             mostrar_grafica_naves_longitud()
         elif opcion_naves =="2":
@@ -57,27 +58,27 @@ def mostrar_menu_naves():
 
 #metodos para cada grafica
 def mostrar_grafica_persona():    
-    print("Mostrando gráfica de personas...")
+    print("\nMostrando gráfica de personajes por planeta...")
     mostrar_grafica_persona_x_planeta()
     plt.show()
 
 def mostrar_grafica_naves_longitud():    
-    print("Mostrando gráfica de longitud de las naves...")
+    print("\nMostrando gráfica de longitud de las naves...")
     mostrar_grafica_naves_long()
     plt.show()
 
 def mostrar_grafica_naves_capacidad_carga():    
-    print("Mostrando gráfica de capacidad de carga de cada nave...")
+    print("\nMostrando gráfica de capacidad de carga de cada nave...")
     mostrar_grafica_naves_cap_carga()
     plt.show()
 
 def mostrar_grafica_naves_hiperimpulsores_():    
-    print("Mostrando gráfica de hiperimpulsores de las naves...")
+    print("\nMostrando gráfica de hiperimpulsores de las naves...")
     mostrar_grafica_naves_hiperpropulsores()
     plt.show()
 
 def mostrar_grafica_naves_MGLT_():    
-    print("Mostrando gráfica de MGLT...")
+    print("\nMostrando gráfica de MGLT...")
     mostrar_grafica_naves_MGLT()
     plt.show()
 

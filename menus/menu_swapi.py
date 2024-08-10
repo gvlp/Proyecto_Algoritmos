@@ -6,7 +6,7 @@ def menu(movies, people, planets, species):
         print("2. Información de personajes")
         print("3. Información de planetas")
         print("4. Información de seres vivos")
-        print("5. Gráficas sobre personajes, planetas y naves")
+        print("5. Gráficas")
         print("6. Estadísticas sobre las naves")
         print("7. Misiones")
         print("8. Salir del programa")

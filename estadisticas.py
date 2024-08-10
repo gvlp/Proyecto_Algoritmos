@@ -18,6 +18,3 @@ veloc_max_atm_estad.to_csv('result_estad_veloc_max_atm.csv')
 #Para el costo en créditos
 costo_en_cred_estad = df.groupby('starship_class')['cost_in_credits'].agg(['mean', mode ,'max', 'min'])
 costo_en_cred_estad.to_csv('result_estad_costo_por_cred.csv')
-
-
-
