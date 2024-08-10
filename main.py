@@ -2,7 +2,7 @@
 
 from Clases.swapi_api import Swapi
 import time
-from menus.menu_swapi import menu
+from Menu.menu_swapi import menu
 
 def main():
     swapi_api = Swapi()
@@ -19,28 +19,28 @@ def main():
 
     startTime=time.time()
     print("El programa se encuentra buscando los datos de las películas")
-    #movies = swapi_api.get_data("films")
+    movies = swapi_api.get_data("films")
     end_time = time.time()
     duracion=end_time-startTime
     print(f"Duración: {duracion:.2f} segundos")
 
     startTime=time.time()
     print("El programa se encuentra buscando los datos de los personajes")
-    #people = swapi_api.get_data("people")
+    people = swapi_api.get_data("people")
     end_time = time.time()
     duracion=end_time-startTime
     print(f"Duración: {duracion:.2f} segundos")
 
     startTime=time.time()
     print("El programa se encuentra buscando los datos de los planetas")
-    #planets = swapi_api.get_data("planets")
+    planets = swapi_api.get_data("planets")
     end_time = time.time()
     duracion=end_time-startTime
     print(f"Duración: {duracion:.2f} segundos")
 
     startTime=time.time() 
     print("El programa se encuentra buscando los datos de los seres vivos")
-    #species = swapi_api.get_data("species")
+    species = swapi_api.get_data("species")
     end_time = time.time()
     duracion=end_time-startTime
     print(f"Duración: {duracion:.2f} segundos") 

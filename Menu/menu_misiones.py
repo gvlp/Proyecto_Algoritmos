@@ -4,14 +4,15 @@ def menu_misiones() :
     while True: 
         viaje_galaxia=Misiones()
         opcion=input('''
-A continuación se presentan las posibles opciónes para que comiences tu misón...
+A continuación se presentan las posibles opciónes para que comiences tu misón:
 1. Crear una nueva misión
 2. Modificar una misón existente
 3. Visualizar las misiones
 4. Guardar misiones
 5. Cargar misiones
 6. Regresar al menú principal
->>> ''').strip()
+                     
+Opción: ''').strip()
         if opcion=='1' :
            viaje_galaxia.agregar_mision()
         elif opcion=='2' :

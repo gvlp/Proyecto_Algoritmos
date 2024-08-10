@@ -58,14 +58,14 @@ class Mision :
         print('Elige el planeta donde quieres que se desarrolle la misón: ')
         for i in range(len(self.planets)) : 
             print(f'{i+1}. {self.planets[i]}')
-        ingreso_planeta=input('>>> ').strip()
+        ingreso_planeta=input('Opción: ').strip()
         while not ingreso_planeta.isnumeric() or int(ingreso_planeta)<1 or int(ingreso_planeta)>len(self.planets) :
             print('\nIngreso Inválido')
             print()
             print('Elige el planeta donde quieres que se desarrolle la misón: ')
             for i in range(len(self.planets)) : 
                 print(f'{i+1}. {self.planets[i]}')
-            ingreso_planeta=input('>>> ').strip()
+            ingreso_planeta=input('Opción: ').strip()
         ingreso_planeta=int(ingreso_planeta)
         planeta_seleccionado=self.planets[ingreso_planeta-1]
         print('-'*20)
@@ -75,14 +75,14 @@ class Mision :
         print('Elige la nave que usarás en la misón: ')
         for i in range(len(self.starships)) : 
             print(f'{i+1}. {self.starships[i]}')
-        ingreso_nave=input('>>> ').strip()
+        ingreso_nave=input('Opción: ').strip()
         while not ingreso_nave.isnumeric() or int(ingreso_nave)<1 or int(ingreso_nave)>len(self.starships) :
             print('\nIngreso Inválido')
             print()
             print('Elige la nave que usarás en la misón: ')
             for i in range(len(self.starships)) : 
                 print(f'{i+1}. {self.starships[i]}')
-            ingreso_nave=input('>>> ').strip()
+            ingreso_nave=input('Opción: ').strip()
         ingreso_nave=int(ingreso_nave)
         nave_seleccionada=self.starships[ingreso_nave-1]
         print('-'*20)
@@ -97,14 +97,14 @@ class Mision :
             print('Elige una: ')
             for i in range(len(self.weapons)) : 
                 print(f'{i+1}. {self.weapons[i]}')
-            ingreso_arma=input('>>> ').strip()
+            ingreso_arma=input('Opción: ').strip()
             while not ingreso_arma.isnumeric() or int(ingreso_arma)<1 or int(ingreso_arma)>len(self.weapons) :
                 print('\nIngreso Inválido')
                 print()
                 print('Elige otra: ')
                 for i in range(len(self.weapons)) : 
                     print(f'{i+1}. {self.weapons[i]}')
-                ingreso_arma=input('>>> ').strip()
+                ingreso_arma=input('Opción: ').strip()
             ingreso_arma=int(ingreso_arma)
             arma_seleccionada=self.weapons[ingreso_arma-1]
             armas_seleccionadas.append(arma_seleccionada)
@@ -117,14 +117,14 @@ class Mision :
 ¿Deseas agregar otra armas?
 Si (1)
 No (2)
->>> ''').strip()
+Opción:  ''').strip()
                 while not seleccion.isnumeric() or int(seleccion)<1 or int(seleccion)>2 :
                     print('\nIngreso Inválido')
                     seleccion=input('''
 ¿Deseas agregar otra armas?
 Si (1)
 No (2)
->>> ''').strip()
+Opción: ''').strip()
                 if seleccion=='2' :
                     print('-'*20)
                     break
@@ -140,14 +140,14 @@ No (2)
             print('Elige a uno: ')
             for i in range(len(self.members)) : 
                 print(f'{i+1}. {self.members[i]}')
-            ingreso_integrante=input('>>> ').strip()
+            ingreso_integrante=input('Opción: ').strip()
             while not ingreso_integrante.isnumeric() or int(ingreso_integrante)<1 or int(ingreso_integrante)>len(self.members) :
                 print('\nIngreso Inválido')
                 print()
                 print('Elige a otro: ')
                 for i in range(len(self.members)) : 
                     print(f'{i+1}. {self.members[i]}')
-                ingreso_integrante=input('>>> ').strip()
+                ingreso_integrante=input('Opción: ').strip()
             ingreso_integrante=int(ingreso_integrante)
             integrante_seleccionado=self.members[ingreso_integrante-1]
             integrantes_seleccionados.append(integrante_seleccionado)
@@ -160,14 +160,14 @@ No (2)
 ¿Deseas agregar a otro integrante?
 Si (1)
 No (2)
->>> ''').strip()
+Opción: ''').strip()
                 while not seleccion.isnumeric() or int(seleccion)<1 or int(seleccion)>2 :
                     print('\nIngreso Inválido')
                     seleccion=input('''
 ¿Deseas agregar a otro integrante?
 Si (1)
 No (2)
->>> ''').strip()
+Opción: ''').strip()
                 if seleccion=='2' :
                     print('-'*20)
                     break
@@ -200,14 +200,14 @@ No (2)
         print('Elige el planeta donde quieres que se desarrolle la misón: ')
         for i in range(len(self.planets)) : 
             print(f'{i+1}. {self.planets[i]}')
-        ingreso_planeta=input('>>> ').strip()
+        ingreso_planeta=input('Opción: ').strip()
         while not ingreso_planeta.isnumeric() or int(ingreso_planeta)<1 or int(ingreso_planeta)>len(self.planets) :
             print('\nIngreso Inválido')
             print()
             print('Elige el planeta donde quieres que se desarrolle la misón: ')
             for i in range(len(self.planets)) : 
                 print(f'{i+1}. {self.planets[i]}')
-            ingreso_planeta=input('>>> ').strip()
+            ingreso_planeta=input('Opción: ').strip()
         ingreso_planeta=int(ingreso_planeta)
         planeta_seleccionado=self.planets[ingreso_planeta-1]
         self.selected_planet=planeta_seleccionado
@@ -221,14 +221,14 @@ No (2)
         print('Elige la nueva nave que usarás en la misón: ')
         for i in range(len(self.starships)) : 
             print(f'{i+1}. {self.starships[i]}')
-        ingreso_nave=input('>>> ').strip()
+        ingreso_nave=input('Opción: ').strip()
         while not ingreso_nave.isnumeric() or int(ingreso_nave)<1 or int(ingreso_nave)>len(self.starships) :
             print('\nIngreso Inválido')
             print()
             print('Elige la nueva nave que usarás en la misón: ')
             for i in range(len(self.starships)) : 
                 print(f'{i+1}. {self.starships[i]}')
-            ingreso_nave=input('>>> ').strip()
+            ingreso_nave=input('Opción: ').strip()
         ingreso_nave=int(ingreso_nave)
         nave_seleccionada=self.starships[ingreso_nave-1]
         self.selected_starship=nave_seleccionada
@@ -241,14 +241,14 @@ No (2)
         print('¿Cuál arma desea intercambiar?')
         for i in range(len(self.selected_weapons)):
             print(f'{i+1}. {self.selected_weapons[i]}')
-        opcion = input('>>> ').strip()
+        opcion = input('Opción: ').strip()
         while not opcion.isnumeric() or int(opcion) < 1 or int(opcion) > len(self.selected_weapons):
             print('Ingreso Inválido')
             print()
             print('¿Cuál arma desea intercambiar?')
             for i in range(len(self.selected_weapons)):
                 print(f'{i+1}. {self.selected_weapons[i]}')
-            opcion = input('>>> ').strip()
+            opcion = input('Opción: ').strip()
         opcion = int(opcion)
         self.selected_weapons.pop(opcion - 1)
         
@@ -259,14 +259,14 @@ No (2)
         for i, arma in enumerate(lista_armas_no_usadas):
             print(f'{i+1}. {arma}')
         
-        ingreso_arma = input('>>> ').strip()
+        ingreso_arma = input('Opción: ').strip()
         while not ingreso_arma.isnumeric() or int(ingreso_arma) < 1 or int(ingreso_arma) > len(lista_armas_no_usadas):
             print('\nIngreso Inválido')
             print()
             print('Elige otra: ')
             for i, arma in enumerate(lista_armas_no_usadas):
                 print(f'{i+1}. {arma}')
-            ingreso_arma = input('>>> ').strip()
+            ingreso_arma = input('Opción: ').strip()
         
         ingreso_arma = int(ingreso_arma)
         arma_seleccionada = lista_armas_no_usadas[ingreso_arma - 1]
@@ -280,14 +280,14 @@ No (2)
         print('¿Cuál arma desea eliminar?')
         for i in range(len(self.selected_weapons)) :
             print(f'{i+1}. {self.selected_weapons[i]}')
-        opcion=input('>>> ').strip()
+        opcion=input('Opción: ').strip()
         while not opcion.isnumeric() or int(opcion)<1 or int(opcion)>len(self.selected_weapons) :
             print('Ingreso Inválido')
             print()
             print('¿Cuál arma desea eliminar?')
             for i in range(len(self.selected_weapons)) :
                 print(f'{i+1}. {self.selected_weapons[i]}')
-            opcion=input('>>> ').strip()
+            opcion=input('Opción: ').strip()
         opcion=int(opcion)
         self.selected_weapons.pop(opcion-1)
         print('-'*20)
@@ -302,12 +302,12 @@ No (2)
             for i, arma in enumerate(lista_armas_no_usadas, 1):
                 print(f'{i}. {arma}')
 
-            ingreso_arma = input('>>> ').strip()
+            ingreso_arma = input('Opción: ').strip()
             while not ingreso_arma.isnumeric() or int(ingreso_arma) < 1 or int(ingreso_arma) > len(lista_armas_no_usadas):
                 print('\nIngreso Inválido')
                 for i, arma in enumerate(lista_armas_no_usadas, 1):
                     print(f'{i}. {arma}')
-                ingreso_arma = input('>>> ').strip()
+                ingreso_arma = input('Opción: ').strip()
 
             ingreso_arma = int(ingreso_arma)
             arma_seleccionada = lista_armas_no_usadas[ingreso_arma - 1]
@@ -325,14 +325,14 @@ No (2)
         print('¿A cuál integrante desea intercambiar?')
         for i in range(len(self.selected_chacarter)):
             print(f'{i+1}. {self.selected_chacarter[i]}')
-        opcion = input('>>> ').strip()
+        opcion = input('Opción: ').strip()
         while not opcion.isnumeric() or int(opcion) < 1 or int(opcion) > len(self.selected_chacarter):
             print('Ingreso Inválido')
             print()
             print('¿A cuál integrante desea intercambiar?')
             for i in range(len(self.selected_chacarter)):
                 print(f'{i+1}. {self.selected_chacarter[i]}')
-            opcion = input('>>> ').strip()
+            opcion = input('Opción: ').strip()
         opcion = int(opcion)
         self.selected_chacarter.pop(opcion - 1)
 
@@ -343,14 +343,14 @@ No (2)
         for i, integrante in enumerate(lista_integrantes_no_usados):
             print(f'{i+1}. {integrante}')
         
-        ingreso_integrante = input('>>> ').strip()
+        ingreso_integrante = input('Opción: ').strip()
         while not ingreso_integrante.isnumeric() or int(ingreso_integrante) < 1 or int(ingreso_integrante) > len(lista_integrantes_no_usados):
             print('\nIngreso Inválido')
             print()
             print('Elige a otro: ')
             for i, integrante in enumerate(lista_integrantes_no_usados):
                 print(f'{i+1}. {integrante}')
-            ingreso_integrante = input('>>> ').strip()
+            ingreso_integrante = input('Opción: ').strip()
         
         ingreso_integrante = int(ingreso_integrante)
         integrante_seleccionado = lista_integrantes_no_usados[ingreso_integrante - 1]
@@ -364,14 +364,14 @@ No (2)
         print('¿A cuál integrante desea intercambiar?')
         for i in range(len(self.selected_chacarter)) :
             print(f'{i+1}. {self.selected_chacarter[i]}')
-        opcion=input('>>> ').strip()
+        opcion=input('Opción: ').strip()
         while not opcion.isnumeric() or int(opcion)<1 or int(opcion)>len(self.selected_chacarter) :
             print('Ingreso Inválido')
             print()
             print('¿A cuál integrante desea intercambiar?')
             for i in range(len(self.selected_chacarter)) :
                 print(f'{i+1}. {self.selected_chacarter[i]}')
-            opcion=input('>>> ').strip()
+            opcion=input('Opción: ').strip()
         opcion=int(opcion)
         self.selected_chacarter.pop(opcion-1)
         print('-'*20)
@@ -386,12 +386,12 @@ No (2)
             for i, integrante in enumerate(lista_integrantes_no_usados, 1):
                 print(f'{i}. {integrante}')
 
-            ingreso_integrante = input('>>> ').strip()
+            ingreso_integrante = input('Opción: ').strip()
             while not ingreso_integrante.isnumeric() or int(ingreso_integrante) < 1 or int(ingreso_integrante) > len(lista_integrantes_no_usados):
                 print('\nIngreso Inválido')
                 for i, integrante in enumerate(lista_integrantes_no_usados, 1):
                     print(f'{i}. {integrante}')
-                ingreso_integrante = input('>>> ').strip()
+                ingreso_integrante = input('Opción: ').strip()
 
             ingreso_integrante = int(ingreso_integrante)
             integrante_seleccionado = lista_integrantes_no_usados[ingreso_integrante - 1]

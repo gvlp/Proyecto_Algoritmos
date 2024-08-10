@@ -124,15 +124,15 @@ def menu(movies, people, planets, species):
 
 
         elif option =="5":
-            from menus.menu_graficas import mostrar_menu_graficas
+            from Menu.menu_graficas import mostrar_menu_graficas
             mostrar_menu_graficas()
 
         elif option =="6":
-            from menus.menu_estadisticas import mostrar_menu_estadisticas
+            from Menu.menu_estadisticas import mostrar_menu_estadisticas
             mostrar_menu_estadisticas()
 
         elif option =="7":
-            from menus.menu_misiones import menu_misiones
+            from Menu.menu_misiones import menu_misiones
             menu_misiones()
              
         elif option == "8":
