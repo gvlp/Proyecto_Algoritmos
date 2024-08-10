@@ -1,4 +1,4 @@
-from misiones import Misiones
+from Misiones.misiones import Misiones
 
 def menu_misiones() :
     while True: 
@@ -19,13 +19,11 @@ A continuación se presentan las posibles opciónes para que comiences tu misón
         elif opcion=='3' :
             viaje_galaxia.visualizar_misiones()
         elif opcion=='4' :
-            pass
+            viaje_galaxia.guardar_mision()
         elif opcion=='5' :
-            pass
+            viaje_galaxia.cargar_misiones()
         elif opcion=='6' :
             print('Regresando al menú principal...')
             break
         else :
             print('\nIngreso inválido')
-
-menu_misiones() 

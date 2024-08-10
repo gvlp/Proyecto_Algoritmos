@@ -1,7 +1,6 @@
 import pandas as pd
 import glob
 import os
-import json
 
 
 def cargar_datos_csv() :
@@ -27,10 +26,6 @@ def cargar_datos_csv() :
                 db[nombre_archivo.replace('.csv','')]=lista_diccionarios
         
     return db
-
-#db es una base de datos creada a partir de los csv de characters, planets, starships y weapons. 
-#cada una de estas es una llave del diccionario, y sus valores son una lista de characters, una lista de planets, una lista de starship y una lista de weapons respectivamente
-#cada elemento de esta lista es de tipo diccionario y contiene caracateristicas referentes a los personajes, planetas, neves o armas.
 
 
 

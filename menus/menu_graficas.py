@@ -35,7 +35,7 @@ def mostrar_menu_naves():
         print("2. Capacidad de carga")
         print("3. Clasificación de hiperimpulsor")
         print("4. MGLT (Modern Galactic Light Time)")
-        print("5. Regresar al menú principal\n")
+        print("5. Regresar\n")
 
     
         opcion_naves = input("Selecciona una opción: ")

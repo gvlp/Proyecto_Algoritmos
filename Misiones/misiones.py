@@ -1,5 +1,5 @@
 from leer_csv import cargar_datos_csv
-from mision import Mision
+from Misiones.mision import Mision
 
 class Misiones:
 
@@ -181,3 +181,59 @@ class Misiones:
                 
                 else: 
                      print('\nIngreso Inválido')
+
+    def guardar_mision(self) :
+        if self.misiones==[]:
+            print('\nNo hay misiones disponibles para guardar.')
+
+        else: 
+            with open('misiones_guardadas.txt', 'a') as archivo:
+                for mision in self.misiones:
+                    archivo.write(f'Mision:\n')
+                    archivo.write(f'Nombre de la mision: {mision.name}\n')
+                    archivo.write(f'Planeta: {mision.selected_planet}\n')
+                    archivo.write(f'Nave Espacial: {mision.selected_starship}\n')
+                    archivo.write('Armas:\n')
+                    for arma in mision.selected_weapons:
+                        archivo.write(f'- {arma}\n')
+                    archivo.write('Integrantes:\n')
+                    for integrante in mision.selected_chacarter:
+                        archivo.write(f'- {integrante}\n')
+                    archivo.write('-' * 40 + '\n')
+        print('Las misiones han sido guardadas exitosamente en "misiones_guardadas.txt".')
+
+
+    def cargar_misiones(self) :
+        try:
+            with open('misiones_guardadas.txt', 'r') as archivo:
+                contenido=archivo.read()
+                misiones=contenido.split('-' * 40 + '\n')
+                
+                for mision_str in misiones:
+                    if mision_str.strip(): 
+                        lineas=mision_str.strip().split('\n')
+                        nombre=lineas[1].split(': ')[1]
+                        planeta=lineas[2].split(': ')[1]
+                        nave=lineas[3].split(': ')[1]
+                        
+                        armas=[]
+                        indice_armas=lineas.index('Armas:') + 1
+                        while not lineas[indice_armas].startswith('Integrantes:'):
+                            armas.append(lineas[indice_armas].strip('- '))
+                            indice_armas+=1
+                        
+                        integrantes=[]
+                        indice_integrantes=lineas.index('Integrantes:') + 1
+                        while indice_integrantes<len(lineas):
+                            integrantes.append(lineas[indice_integrantes].strip('- '))
+                            indice_integrantes+=1
+                
+                        mision=Mision(nombre, planeta, nave, armas, integrantes)
+                        self.misiones.append(mision)
+
+            print('Las misiones han sido cargadas exitosamente desde "misiones_guardadas.txt".')
+
+        except FileNotFoundError:
+            print('No se encontró el archivo "misiones_guardadas.txt". Asegúrate de que el archivo existe y tiene misiones guardadas.')
+        except Exception as e:
+            print(f'Ocurrió un error al cargar las misiones: {e}')

@@ -1,5 +1,5 @@
 import pandas as pd
-import estadisticas
+import Estadisticas.estadisticas as estadisticas
 
 def imprimir_resultados_hiperimpulsores():
     data_hiperimpulsores = pd.read_csv('result_estad_hiperimpulsores.csv',names=['Clase de nave', 'Promedio', 'Moda', 'Máximo', 'Mínimo'], header=1)
