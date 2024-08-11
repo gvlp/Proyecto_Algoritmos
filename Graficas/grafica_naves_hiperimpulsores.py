@@ -18,7 +18,7 @@ def mostrar_grafica_naves_hiperpropulsores():
     colors = [gen_random_colors() for _ in range(elements_number)]
     plt.bar(starships,lenghs,color=colors)
     plt.xlabel('Naves')
-    plt.ylabel('Capacidad de carga')
-    plt.title('Comparacion de capacidad de carga de naves')
+    plt.ylabel('Clasificación de Hiperimpulsores')
+    plt.title('Clasificación de hiperimpulsores por nave')
     plt.xticks(rotation=90)
     plt.tick_params(axis='x',which='major',labelsize=7)

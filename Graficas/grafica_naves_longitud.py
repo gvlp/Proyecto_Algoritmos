@@ -19,7 +19,7 @@ def mostrar_grafica_naves_long():
     plt.bar(starships,lenghs,color=colors)
     plt.xlabel('Naves')
     plt.ylabel('Longitud')
-    plt.title('Comparacion de MGLT de cada nave')
+    plt.title('Comparacion de longitudes de las naves')
     plt.xticks(rotation=90)
     #plt.xlim(-0.5, len(starships)-0.5)
     plt.tick_params(axis='x',which='major',labelsize=7)

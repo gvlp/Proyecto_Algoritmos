@@ -33,8 +33,8 @@ def mostrar_grafica_persona_x_planeta():
     colors = [gen_random_colors() for _ in range(elements_number)]
     plt.bar(homeworld_label,homeworld_values,color=colors)
     plt.xlabel('Planetas')
-    plt.ylabel('Numero de personas')
-    plt.title('Personas nacidas en cada planeta')
+    plt.ylabel('Némero de personajes')
+    plt.title('Número de personajes nacidos en cada planeta')
     plt.xticks(rotation=90)
     plt.xlim(-0.5, len(homeworld_label)-0.5)
     plt.tick_params(axis='x',which='major',labelsize=7)
