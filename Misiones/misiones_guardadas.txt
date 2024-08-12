@@ -1,0 +1,46 @@
+Mision:
+Nombre de la mision: Viaje de Tatooine
+Planeta: Tatooine
+Nave Espacial: Millennium Falcon
+Armas:
+- Lightsaber
+- DL-44 Blaster Pistol
+- E-11 Blaster Rifle
+- Bowcaster
+Integrantes:
+- Han Solo
+- Leia Organa
+- Luke Skywalker
+----------------------------------------
+Mision:
+Nombre de la mision: Viaje a Naboo
+Planeta: Naboo
+Nave Espacial: Naboo Royal Starship
+Armas:
+- DL-44 Blaster Pistol
+- E-11 Blaster Rifle
+- Bowcaster
+- Thermal Detonator
+- Electrostaff
+Integrantes:
+- Padm� Amidala
+- Anakin Skywalker
+- Obi-Wan Kenobi
+----------------------------------------
+Mision:
+Nombre de la mision: Viaje a Jakku
+Planeta: Jakku
+Nave Espacial: Rebel transport
+Armas:
+- E-11 Blaster Rifle
+- Bowcaster
+- Thermal Detonator
+- Electrostaff
+- DC-15A Blaster Rifle
+- Force Pike
+- SE-14C Blaster Pistol
+Integrantes:
+- Rey
+- Finn
+- Poe Dameron
+----------------------------------------
